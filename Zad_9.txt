@@ -1,0 +1,46 @@
+Warto stworzyć własną klasę wyjątku, gdy:
+    - Potrzebujesz konkretnego typu błędu, który jasno opisuje problem.
+    - Tworzysz bibliotekę lub moduł – użytkownik może złapać Twój wyjątek bez łapania wszystkich Exception.
+    - Standardowe wyjątki jak IllegalArgumentException są zbyt ogólne.
+
+    Przykład:
+        public class InvalidLoginException extends Exception {
+            public InvalidLoginException(String message) {
+                super(message);
+            }
+
+Kiedy warto wyjątek rzucić (throw)?
+Wyjątek rzucamy, gdy:
+    - Występuje nieprawidłowy stan, którego nie możemy naprawić lokalnie.
+    - Chcemy, aby kod wyżej zdecydował co dalej.
+
+    Przykład:
+        public void login(String username, String password) throws InvalidLoginException {
+            if (!username.equals("admin") || !password.equals("1234")) {
+                throw new InvalidLoginException("Nieprawidłowe dane logowania.");
+            }
+        }
+
+Kiedy warto wyjątek przekazać dalej (throws bez obsługi)?
+Przekazujemy wyjątek dalej, gdy:
+    - Metoda pomocnicza nie wie, co zrobić z błędem.
+    - Obsługą błędu powinien zająć się kod wywołujący.
+
+    Przykład:
+        public String readFile(String path) throws IOException {
+            return Files.readString(Paths.get(path));
+        }
+
+Kiedy warto wyjątek obsłużyć (try-catch)?
+Obsługujemy wyjątek, gdy:
+    - Możemy kontynuować działanie programu mimo błędu.
+    - Chcemy poinformować użytkownika lub zalogować błąd.
+    - Możemy zapewnić działanie awaryjne (np. domyślne dane).
+
+    Przykład:
+        try {
+            String text = readFile("config.txt");
+            System.out.println(text);
+        } catch (IOException e) {
+            System.out.println("Nie udało się odczytać pliku konfiguracyjnego.");
+        }

@@ -12,18 +12,18 @@ public class Zad_8 {
 
         try {
             sprawdzWiek(wiek);
-            System.out.println("Ty możhna kupyty pyvka.");
+            System.out.println("Osoba jest pełnoletnia.");
         } catch (NiepelnoletniException e) {
             System.out.println("Błąd: " + e.getMessage());
         } finally {
-            System.out.println("Pełnoletni.");
+            System.out.println("Success.");
         }
     }
 
     // Metoda rzuca wyjątek, jeśli wiek < 18
     public static void sprawdzWiek(int wiek) throws NiepelnoletniException {
         if (wiek < 18) {
-            throw new NiepelnoletniException("Ty ne mozhesz vypyty pyvka! Wiek: " + wiek);
+            throw new NiepelnoletniException("Osoba jest niepełnoletnia! Wiek: " + wiek);
         }
     }
 }

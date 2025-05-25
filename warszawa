@@ -1,0 +1,248 @@
+<!DOCTYPE html><html>
+
+<head>
+    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><title>Merito Logowanie</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" type="text/css" href="/cas/webjars/normalize.css/8.0.1/normalize.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/5.2.0/css/bootstrap-grid.min.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/material-components-web/14.0.0/dist/material-components-web.min.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/mdi__font/6.5.95/css/materialdesignicons.min.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/datatables/1.12.1/css/jquery.dataTables.min.css" /><link rel="stylesheet" type="text/css" href="/cas/themes/cas-merito-theme/css/cas.css" /><link rel="stylesheet" type="text/css" href="/cas/themes/cas-merito-theme/css/flag-icon.css" /><link rel="stylesheet" type="text/css" href="/cas/themes/cas-merito-theme/css/login.css" /><link rel="shortcut icon"
+        href="/cas/themes/cas-merito-theme/images/favicon_merito.png" /></head>
+
+<body class="login mdc-typography">
+    <script type="text/javascript" src="/cas/webjars/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="/cas/webjars/datatables/1.12.1/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="/cas/webjars/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script type="text/javascript" src="/cas/webjars/css-vars-ponyfill/2.4.7/dist/css-vars-ponyfill.min.js"></script>
+    <script type="text/javascript" src="/cas/webjars/material-components-web/14.0.0/dist/material-components-web.min.js"></script>
+<script type="text/javascript" src="/cas/themes/cas-merito-theme/js/cas.js"></script>
+<script type="text/javascript" src="/cas/themes/cas-merito-theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="/cas/themes/cas-merito-theme/js/jquery-ui.min.js"></script>
+<script>
+    if (typeof resourceLoadedSuccessfully === "function") {
+        resourceLoadedSuccessfully();
+    }
+    $(() => {
+        typeof cssVars === "function" && cssVars({onlyLegacy: true});
+    })
+    var trackGeoLocation = false;
+</script>
+
+<!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TSCTXS"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TSCTXS');
+
+
+function changeLang(lg) {
+        var url = self.document.location.origin + self.document.location.pathname;
+        var searchParams = new URLSearchParams(window.location.search); 
+        searchParams.set("locale", lg);
+        window.location.href = url + '?' + searchParams.toString();
+
+}
+
+
+</script>
+<!-- End Google Tag Manager --><div id="top" class="header">
+     <div class="top_right">
+                <a onClick="changeLang('pl');" style="cursor: pointer;"><span class="flag-icon flag-icon-pl"></span></a>
+                <a onClick="changeLang('en');" style="cursor: pointer;"><span class="flag-icon flag-icon-gb"></span></a>
+    </div>
+ 
+</div>
+<div class="mdc-drawer-scrim"></div>
+
+    <div id="main" class="">
+        <!--main role="main" id="main-content" th:attr="class=*{mainContentClass ?: 'container-lg' + ' py-4'} "--><main role="main" id="main-content">
+            <div id="content" class="d-flex justify-content-center">
+   <!--div class="d-flex justify-content-center flex-md-row flex-column mdc-card mdc-card-content card flex-grow-1" --><div id="beforeSectionLoginForm">
+        <section id="loginForm"
+                 class="login-section login-form card-body">
+            <h2>Logowanie</h2>
+            <h1 class="big">Wirtualnie na Uczelni</h1>
+
+            <div id="inSectionLoginForm" class="flex-column justify-content-between">
+
+        <div>
+            <!--div class="service-ui" th:replace="fragments/serviceui :: serviceUI">
+                <a href="fragments/serviceui.html">service ui fragment</a>
+            </div --></div>
+        <!--div class="form-wrapper"--><form method="post" id="fm1" action="login">
+                <div id="login-form-controls">
+                    <!--h3 th:unless="${existingSingleSignOnSessionAvailable}" class="text-center">
+                        <i class="mdi mdi-security fas fa-shield-alt"></i>
+                        <span th:utext="#{screen.welcome.instructions}">Enter your Username and Password:</span>
+                    </h3--><section class="cas-field form-group" id="usernameSection">
+                        <label for="username"><span class="accesskey">L</span>ogin:</label>
+                            <input id="username"
+                                   size="25"
+                                   type="text"
+                                   accesskey="l"
+                                   autocapitalize="none"
+                                   spellcheck="false"
+                                   autocomplete="username" required name="username" value=""/><div class="mdc-text-field-helper-line">
+                            <div class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">
+                                <span id="usernameValidationMessage">Nazwa użytkownika jest polem wymaganym.</span>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            /*<![CDATA[*/
+                            var username = "";
+                            var disabled = false;
+
+                            if (username != null && username !== '') {
+                                $('#username').val(username);
+                                if (disabled) {
+                                    $('#usernameSection').hide();
+                                }
+                            }
+                            /*]]>*/
+                        </script>
+                    </section>
+                    <section class="cas-field form-group mdc-input-group form-group" id="passwordSection">
+                        <div class="mdc-input-group-field mdc-input-group-field-append">
+                            <div class="caps-check">
+                                <label for="password"><span class="accesskey">H</span>asło:</label>
+                                    <input type="password"
+                                           id="password"
+                                           size="25"
+                                           required
+                                           accesskey="h"
+                                           autocomplete="off" name="password" value=""/><div class="mdc-text-field-helper-line">
+                                    <div
+                                            class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+                                            aria-hidden="true">
+                                        <span id="passwordValidationMessage">Hasło jest polem wymaganym.</span>
+                                    </div>
+                                </div>
+                                <div class="mdc-text-field-helper-line caps-warn">
+                                    <div
+                                            class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg text-danger">
+                                        <span>CAPSLOCK jest włączony!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="cas-field form-group my-3">
+                        </section>
+
+
+                    <section class="cas-field form-check tooltip">
+                        <div class="mdc-form-field">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox"
+                                       class="mdc-checkbox__native-control form-check-input"
+                                       name="rememberMe"
+                                       id="rememberMe"/><div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark"
+                                         viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path"
+                                              fill="none"
+                                              d="M1.73,12.91 8.1,19.28 22.79,4.59"/></svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                                <div class="mdc-checkbox__ripple"></div>
+                            </div>
+                            <label class="form-check-label" for="rememberMe">Zapamiętaj mnie</label>
+                        </div>
+			    <span class="tooltiptext">Zaznaczaj tylko jeżeli używasz swojego urządzenia</span>
+                        <p/></section>
+                    <section class="cas-field">
+
+                        <input type="hidden" name="execution" value="ee81faa2-1c95-4403-bb5b-4e127182772c_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0lzSW10cFpDSTZJamswWW1Nd016ZGpMVE5oWkRBdE5HUXhaQzFpWlRRMUxXTTVNbUUzT0RjME5ETXpNaUo5LkVOSXJRNzFOcUp4aTdQUkhUTENZaTRGVHJwdzlHX0FZTDdhWVRKRkt4SzcwVkg3TGRpajZFQWozQW4yNkxMVmlGLWJFYTZUYXdxSXFlNVg5bndSRXdDSk5lZDdaaUdSTTZpcEdyazRYVm9FVmJybENWUjRfa0gxLTlLRUJUWWtSR0hDWjh2MjFHQjFIRGxaanNJNFlfZ2FLNVpOYzl6TmxPUWJiaDY5X0FMa2ZKUnFwOW8xaXRwLTJ3X0VsckNUclViUzlyZTNPUkxvVzZBTG15RjktdWRueFpuTXE2VjlXSGNZUE51OVV3NGVFN09hTnlnUzBveklVWjlMZFQtTVhjR2JoUDJvenR4aUs1LWV3eG1jZDJTdHNvTzFYd3A2OFhpZ04wOEtpUVo4SVFiRUZuLXRBWVJzYVZjVGZFeS14WUF1eHg2THJpMjJiLXFpbGtLZjc3MFZvVW9fVER2cld0QVVxbWdvcjFBSU5JMDBua3NIWVJfenJ5VDV4UXk5amQwNmwxX19sYndzSS1JWHVaNlVhYURGZm1sTDZTdmNWbmo4UGpsZGRrQ0R3cENxUmhUU2JDdDI3ekIxRlppTDJXTDlFckk4RDU3eEhKM05SWmhaMGxwaE1tQ1lYcFNnbHhRNUdzUjFnUVhGNkpGcmZfME9nZ1lNUFJWRXZLX28yUFE5eVY0SDV5M3piMHR4Y3FJbU5GUDdXcU0wek5FQUhLUml0TnRzOEswaFQwbmM1djNna3dJVlFfNWFQZ1gwUFM4UVpPNFdjcHZpM0EyY05od0xsblJmUHdIZEdSaHBReW9KZFBhaUJYWEFPT1puRkVyTmdWT2FHNVJ6SlJtT3hVX3NJRGpIbnBwRUFvQXlqTnJaTHpCc2k1WEtwZGM2NldTdmZ4QW5rMkdQVmg4VjduaDRGUE9ZdWRYeXJFVTdPY2pHNW93OFBDUUZhMjZKZFdpMmYyRlV3REMxM3lBOFV4UmtUYS12YV9hOUpKaTgzLXl6bU9lYW9qdmVBcDcwWVFGbExVZkpkbEtDRXdqTnd4OURUeUtvaG5EblhIeHFGZ3d4b0VkbUh6NVhQNVk1SVpOenVfbjVEU1VsM0JQcGVTX3ZuQTZQUW11SDBuWDlQUldleGp0ZUU1dmtMTzNUNmk5bkx2Rk9SWmp3WThsMkpDV0JlcUcwQk5BcFE2TFVBdEtLcTZGczhXT192Z2g4Mml3UzBxRWp6X3V1ekZ3NFNES2VsN3pERGNfM01HY1FyUGFYNVJYRUtJd20wTWlFc1RBbXVWNE42QS1tbjJvZDY5bjBfMUROMkI2UE5sWU1OSzV4cXBnQVVWQlJUTVdBdHJ6X1BwdVlYS3dnOVYyWlN4S1c4eGlrTHoxdXFneHA3d1VnVi1kOUU4TGtlZnljUlk1MndFcWUwQ010Z0pKekJBV2NWT0VITUJDalB5T085Q0lTRE5rRVQzTXJSMHBvaEFjTXdCUVVMUldEZVFYUTJMSV84Z3JLaDcwdmZDSkpOdjN5b3VHOUZkRjVNSXBkLU9JYkROQTNVeWhZT1dtSWVqV3ZBdUI5V2Rmelh2ZDZZQU9Cd3JjeUd0bWEtX2hacmh2RjFpdGhSbVdFYk5GZHBES3ZHeF8zanZqSU9tbnZjN1RyblVkaUZ3VjNONm0wVDJ2QVkzU3R3LVpiYlM4YzZSRW5Fd2U0QUFBNzNIMzI5c2RiVDRsV3pkSjF0LV81NE1nT3VSXzZrYkU3SzJ3cDVQUVVZa1VRNWhqM2dyV1B3cGpEQkdReVljU29hSkpELUxOM0ZPeHJfYVlad19nME1RbEctWFpOZHFWb0dMNUI3OXRZWTU0Z3ZqTmhSSklBcmFFZmhxOEdGRTBrWDQwb09Ec2lWZDBJVHFEaGtlRlhOY01EVXNXd0lyaGl2VF9IcExLamItTmUyd0F6WVJWcFhsMk5hWEZWUHFoTm5CME1NcDJGY0xpSUhDdDV0aERENVZpQVZoUXRHbVljSVhHaXlScHU3SVZkRHJLaWJ2YUJZQnRKck81dGFkQXB3d3BZbFloZDB2U2J3bXhkZllVb3lrcVRyNDhVVERraFVFVm1GSDFVNzBkWVRNWnlPUlk5azRDRHMwZU5iRTJMSDhQQnNEZzcxYW8zMm9PYjNrak1DNjVPeUo0aEFjeXhuWVNiVXYycW5ENWd2YTRfODdhMXk2b0c3cmhSUzI0aUhDU2pHMFVEb2FCZFgzYmdYVjA3ZWd6TjE0b2ZyMFN0Q0ZzNDdSUmhTU3ZTUUd5TE5ZdVlDcml0MkZBSDhqaENHdm5jcUQ3V1EwTkpaYU1hYno5OURVekVxeDBaamJibmQtTjZzcUJkR0lvVXU1Z2ltbGxqY2NRUWc3elk0RHlXM2psSU9jN19tZW9XUTBhc000M1l2ckN1YzlJWHhBcmFSbFlybmdYYXhwSWpqRmtPelVDUHdQR2tPb3hmUEVkV1ZJY1B5OHl6NEtibDk2aEo0SjBpcE9sTkV0V01LajZ6cm8xa3BMRWdJdUlCWTR1WXNac2NMbXozSmJHTWctcUpJaTBnSVBnT0E0TjhxSmZHbGswN2J5TDJOa0N2RkREblNyMU0tQVp0MXBCWnpRWHY5aXBZa1VDT09lNWFlTnhkdVNIZDFEaFpZUGhDV24wTUw2V1FMVk5oVGNyT19mZl9SaFFJMGhVb3BZSkVEZE1XalU0WWg5dXRlY1hscWFhSTU0akFJMjB5azF6M005cldjWHZVYzhFbE9iNFdGdS1TX0hDUE5YQjZ6cEdyZVhyMzVReEdweEZyeEJVUE9PSmUzbU92UC0wNkkxZnA5ZTQ4aVI5MlA2d1FFOTFRT0hIOXROakVlNDVLcjh2VF9SYVJrYnlKd1dKYkVQTGFkcVF6c3pySGlaMkYxTGRseVJObHZ0RjRMOFMwNk1HcjlNMmYzVzZMZ2p4VjRwQ1pudEhPY01TV2ZpaVRMbEhJRklnbjMzMmQyR1FDa1RnODRZQWRKR25YellxdFhRejRfVnVuaVE4dzZIaGxrSzNua25WbUNNX2YxbG1QV056SVhtX2FPWXJBbWplRjI0a0lid1MwZUZUY3dKYnBsWW5EaEtWNEhOSFpLQVVnSjF3WHlHQzlfNWYzSWcyQjBXTi1FUlNiVzlpQkZKMVNpdEhxanhTWFB4YXNkQlZVYmZtbUtUbzVfZ29MS08tZHVreC1YTXpScUdQcmwyZU9DXzBsOHlRbkVWTnZndVU1UVFyRXZKTHhlWFVWb2s0aHRRVFg2enZQUC0yN3FzMjFPd0ZhZzBUNTJTb1NCOTZXMDRFQm84bjdoMnEyTnFDWWhpWTZKdy1TcmlZemc2UjVkLVc0bHVFd1ZmUjU2bFhvZUk5RkFVNjFJRml1WkxSOGpBNmpvVjlrbmRXY1hnbTdnUkd0Q29qdHJDTDhGQS1vREtnMVhKemxTX3l0d1E3bW5ubmdfM0NTejRnTjB5bTRfeEZNUnR1dWc4RXhfZzdIdkVtYk5veGNZbTZ4OXp4bFgyTExFQjFMd1pIOEZlb0JzYnZzOGFuWi1XbUU1ZHpFekcyeUpKYmg5a0ZSc2UwV0hNVlRIcjNKT05sTjFvSUFpOU05bTBlZ3dkNGdmWXJ2dm9MODhabXhvRnlPUk1zV193VHhvZUpQX0M4Zzd4QVhOT2ZlUElyZFhpTlNRQzFkUW5TQjFqZFlVdnBZZUNUQzJiM1ozcm5kZXlpWEo4SFNDUVpjTC1wVVpKNmlFaGp2N01FYnJMX3pINmhSNjVfLXEzc3JhUmduRk9NLUxUSko3dkZHdVRiX1d1WFdodVljR01yY19fQWJISzNIXzd5VVNRcHhfaGtfRUE2N18teDFkdENhVGdIS3BKRENYUHAtRFgyR1kyTEdPRi1uZUJyYjBoNkdMbzBWbEJqajhSUDlxLUsyTHJ2THU4Z1V1ZU9aelZXRXI2TmNxOWdnSDFOa1BoQVVnV3lPQUZyMGZSQ2VobGVqb0pFWmMtUnV4YWFCTmhMTzktTFhjcGxsM3U0U09JX2o4OThOcTdOZ20yZFhIRl9VcGRYM2xJOXY4U0ZDQmktQmxrS0JSY1RTWUw0UEhPSFJKZVhmcHRYNU9OdHFjd2Jnblg4WlQ4YjdiaW5teDJ4OEZpUXNCZWJqWE96Q3dMeEFrNTBZRGZXRFFxRnA3Wkh2Ym1JNmpmNDZrbVV4bF9YVlZfbktfNk5XdnU2X1pybHpReHd5NmNOZDVINE1kLU83STVDMHRKY0Q3OUNpS3JwVXVfSmVua1hsN3MyR05kaWVWUktOSFgyMVlaV1FqZkFyeVl1NkRBcTZveW5PLWxiNDlmRUY2dGNiRlQ1RmhpUmNNdHk3Y29IX1ltNTZwdHRaaFBtTjhYcDQtMVRBQk8zUEVKcnNIdUVuOVA0V0ZjV2tRUUFFWUZsdVBWblNWVkVKU1g0N0F3M1JOLUd5NzcwWWc5MDU3V0MwVTh6VGJXYVcwMFdqX0ptczhsMFpWVkkzWXRBc0phdVpGU1BnblZTT0VWeHVmVWJad0IzeTVTWUVTSzdNR3hxbFFvN1V6TDJ5N2JQaDRzUjU3WmdTYXNNYVIzOHU2dVRjdGYwVWRYa1U4WE1hb0ZYMEhMMjJQS1l3cWhka2VsSVM3Qi1XdzFyMjdXeVhxamxENi0wVzh0OGF5WWpKSmxXNWVZMGtNM0pPbkRISlJlX1BVdkNuMGJDU0l6U29CNHFTeVp6Q2wxS205Z05Fd3RkMVpWNGVGSkY0RlVyMzJ2OV9Pdk91ZnBaSERiYnhpUHRFYnBFVUJMUjR1UlBsQ185OGR5QzF5WTdMZkd4NzY2Nm9sbDRYekdERzQ0Rm9Qb1hSWk5hekprMExueTduUzBJdXozQU45UURuWGVIc0FmTENBY2xsVHE0aXFVZktFVmVmVFpqYnB2V3dpMkQ1LVJWelhUMjdVOXF5TVR5NklxUE9VdHcyX05jUGhhN1B6b0NZRHE4NU03dGZ1aHNybjdhZWJRcl9YMGJWaXRCOWVhc1Z0U1RGQW9GUjVYS0xRRnNYYlZMWWJTMDNPNGd6QjZrdUVNUzVOcVdkYnNacmlCQTY5eEhrNE5lM3k0YnBHRk9XT2E5SV9GaWhZbzRoY0dwdTZlTS1zMW4wTmNjYkZ3NG9ZenZDQ1lhRW5rTjBLR0NiNDJKN1lXNW5ZZWxGUVRGeGxNVDdJeDJzOWxHSS0zdFBnaDdJZnV0RG80QWotNFlTb0IxZDN6R1F3TS0tVDdjOGpXYzRySW9qZHdQTUs5UHJoMjBlSnJPNGNTbGpkOTIzUDg4eVN4ejZsWFhsTVVRdTdJMVhzTHBvdmR4VEVRUW45ZV9Rb1hIM0RLZmljb0IzZkMwSUZlVjdUR0lvc0d0OThCU0ZBanFDRzVNdnlkdjRueUVlUTBoeVdGMzE0TnFmNDE2eHZyUFdqOGc5cDVYaThGcDhYbUVlcmZxc0tyNXBFUDNibE5jTnkxZzRmUmxaeVVJM1JXVklJZkxzdDFTUkFCZ0JKYzNaR0JoUXFlSjdJendvMVotN3dOT0RNamcuYVNGaEk1N2ZXRWVGeWFnLXEzc3M1YUpkRDB0bnNkalpyTTFRVFMyekloaVpyMktUSXBHRUVOTHdxNDgwT0FCSlVHR0VHQkNOeEFGYmFrT2pwT0lrekE="/><input type="hidden" name="_eventId" value="submit"/><input type="hidden" name="geolocation"/></section>
+
+                    <button id="submitButton" class="submitButtonPl"
+                name="submitBtn"
+                accesskey="l"
+                type="submit">
+            <!--span class="mdc-button__label" th:text="#{${messageKey}}">Login</span--></button>
+
+        </div>
+            </form>
+
+            <!--hr th:if="${loginFormViewable and loginFormEnabled}" class="my-4"/--><!--span id="webauthnLoginPanel" th:if="${webAuthnPrimaryAuthenticationEnabled}">
+                <script type="text/javascript">
+                    $('#webauthnLoginPanel').show();
+                </script>
+
+                <div th:replace="fragments/webAuthnLogin :: webAuthnLogin"/>
+                <hr class="my-4"/>
+            </span--><!--span th:if="${loginFormViewable and loginFormEnabled}">
+                <span th:remove="tag"
+                      th:if="${'true' == #strings.defaultString(#themes.code('cas.pm-links.enabled'), 'true')}">
+                    <div th:replace="fragments/pmlinks :: pmlinks"/>
+                </span>
+            </span--><script type="text/javascript">
+                /*<![CDATA[*/
+                var i = "Chwileczk\u0119..."
+                var j = "ZALOGUJ"
+                    /*]]>*/
+                    $(window).on('pageshow', function () {
+                        $(':submit').prop('disabled', false);
+                        $(':submit').attr('value', j);
+                    });
+                $(document).ready(function () {
+                    $("#fm1").submit(function () {
+                        $(":submit").attr("disabled", true);
+                        $(":submit").attr("value", i);
+                        return true;
+                    });
+                });
+            </script>
+        <!--/div--><!--span th:if="${loginFormViewable and loginFormEnabled}">
+            <div th:replace="fragments/loginsidebar :: loginsidebar"/>
+        </span--><div class="info">
+          <h2>Informacje</h2>
+            <ul>
+              <li>Jest to panel logowania do systemów Uczelni przeznaczonych dla studentów, absolwentów oraz pracowników (system komunikacji Uczelnia - Student, platforma e-learningowa).</li>
+              <li>W celu poprawnego zalogowania podaj swój login oraz hasło.</li>
+              <li>Informacje o konstrukcji loginów oraz kontakt z administratorem znajdziesz na stronie swojej Uczelni.</li>
+              <li><a href="https://portal.wsb.pl/pages/password?locale=pl">Resetowanie hasła</a></li>
+              <li>Opcję "Zapamiętaj mnie" zaznaczaj TYLKO gdy jesteś jedynym użytkownikiem korzystającym z tego urządzenia. </li>
+              <li>Użycie przycisku "Wyloguj" usuwa zapamiętane zalogowanie.</li>
+            </ul>
+        </div>
+    </div>
+        </section>
+        <span>
+            </span>
+        </div>
+</div>
+        </main>
+    </div>
+
+    <div id="footer" class="footer">
+    <!-- div class="footer nav">
+        <a href="http://www.wsb.pl/o-grupie-wsb" target="_blank">O Grupie WSB</a>
+        <a href="http://www.wsb.pl/kontakt" target="_blank">Kontakt</a>			
+    </div>
+    <div class="follow">
+        <span>Śledź nas na:</span>
+        <a href="http://pl-pl.facebook.com/pages/Wy%C5%BCsze-Szko%C5%82y-Bankowe/110101185691208 " title="Facebook" target="_blank">
+            <img src="/cas/dti/images/gfx/icons/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/wyzsze_szkoly_bankowe" title="Instagram" target="_blank">
+            <img src="/cas/dti/images/gfx/icons/instagram.png" alt="Instagram">
+        </a>	
+
+        <a href="https://twitter.com/Eksperci_WSB" title="Twitter" target="_blank">
+            <img src="/cas/dti/images/gfx/icons/twitter.png" alt="Twitter">
+        </a>	
+
+        <a href="http://www.youtube.com/grupawsb " title="YouTube" target="_blank">
+            <img src="/cas/dti/images/gfx/icons/youtube.png" alt="YouTube">
+        </a>	
+
+        <a href="#" title="Google+">
+            <img src="/cas/dti/images/gfx/icons/googleplus.png" alt="Google+" target="_blank">
+            </a>	      
+    </div --><!-- p class="copyright"><span th:text="#{footer.rights}">Wszelkie prawa zastrzeżone</span> &copy; 2021 <a href="http://www.teb-akademia.pl" target="_blank">TEB Akademia</a></p--></div>
+</body>
+
+</html>
